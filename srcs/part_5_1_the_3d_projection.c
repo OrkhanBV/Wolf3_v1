@@ -36,7 +36,7 @@ void	set_the_color_to_the_celing(int ray_nbr, t_cntnr *cntnr)
 	int	y;
 
 	y = 0;
-	while (y < cntnr->wallTopPixel)
+	while (y < cntnr->wall_top_pixel)
 	{
 		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF333333;
 		y++;
@@ -55,7 +55,7 @@ void	set_the_color_to_the_bottom(int ray_nbr, t_cntnr *cntnr)
 {
 	int	y;
 
-	y = cntnr->wallBottomPixel;
+	y = cntnr->wall_bottom_pixel;
 	while (y < WINDOW_HEIGHT)
 	{
 		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF470e0e;
@@ -78,23 +78,23 @@ void	generate_3d_projection(t_cntnr *cntnr, t_player *plr, t_ray *trays)
 	i = 0;
 	while (i < NUM_RAYS)
 	{
-		cntnr->perpDistance = trays[i].distance * cos(
+		cntnr->perp_distance = trays[i].distance * cos(
 				trays[i].ray_angle - plr->rotation_angle);
-		cntnr->projectedWallHeight = (
-				TILE_SIZE / cntnr->perpDistance) * DIST_PROJ_PLANE;
-		cntnr->wallStripHeight = (int)(cntnr->projectedWallHeight);
-		cntnr->wallTopPixel = (
-				WINDOW_HEIGHT / 2) - (cntnr->wallStripHeight / 2);
-		if (cntnr->wallTopPixel < 0)
-			cntnr->wallTopPixel = 0;
+		cntnr->projected_wall_height = (
+				TILE_SIZE / cntnr->perp_distance) * DIST_PROJ_PLANE;
+		cntnr->wall_strip_height = (int)(cntnr->projected_wall_height);
+		cntnr->wall_top_pixel = (
+				WINDOW_HEIGHT / 2) - (cntnr->wall_strip_height / 2);
+		if (cntnr->wall_top_pixel < 0)
+			cntnr->wall_top_pixel = 0;
 		else
-			cntnr->wallTopPixel = cntnr->wallTopPixel;
-		cntnr->wallBottomPixel = (WINDOW_HEIGHT / 2) + (
-				cntnr->wallStripHeight / 2);
-		if (cntnr->wallBottomPixel > WINDOW_HEIGHT)
-			cntnr->wallBottomPixel = WINDOW_HEIGHT;
+			cntnr->wall_top_pixel = cntnr->wall_top_pixel;
+		cntnr->wall_bottom_pixel = (WINDOW_HEIGHT / 2) + (
+				cntnr->wall_strip_height / 2);
+		if (cntnr->wall_bottom_pixel > WINDOW_HEIGHT)
+			cntnr->wall_bottom_pixel = WINDOW_HEIGHT;
 		else
-			cntnr->wallBottomPixel = cntnr->wallBottomPixel;
+			cntnr->wall_bottom_pixel = cntnr->wall_bottom_pixel;
 		conteyner_for_gen_3d_proj(i, cntnr, trays);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 00:49:23 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 18:25:53 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:31:02 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,11 +138,11 @@ typedef struct s_cntnr
 	int				tile_x;
 	int				tile_y;
 	int				tile_color;
-	float			perpDistance;
-	float			projectedWallHeight;
-	int				wallStripHeight;
-	int				wallTopPixel;
-	int				wallBottomPixel;
+	float			perp_distance;
+	float			projected_wall_height;
+	int				wall_strip_height;
+	int				wall_top_pixel;
+	int				wall_bottom_pixel;
 	int				distanceFromTop;
 	int				textureOffsetY;
 	int				textureOffsetX;

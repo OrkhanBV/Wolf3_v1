@@ -29,13 +29,13 @@ void	get_correct_texture_id_depend_of_wall_dir(int ray_nbr,
 {
 	int	y;
 
-	y = cntnr->wallTopPixel;
-	while (y < cntnr->wallBottomPixel)
+	y = cntnr->wall_top_pixel;
+	while (y < cntnr->wall_bottom_pixel)
 	{
 		cntnr->distanceFromTop = y + (
-				cntnr->wallStripHeight / 2) - (WINDOW_HEIGHT / 2);
+				cntnr->wall_strip_height / 2) - (WINDOW_HEIGHT / 2);
 		cntnr->textureOffsetY = cntnr->distanceFromTop * (
-				(float)TEXTURE_HEIGHT / cntnr->wallStripHeight);
+				(float)TEXTURE_HEIGHT / cntnr->wall_strip_height);
 		switch_case_for_get_correct_texture(y, ray_nbr, cntnr, trays);
 		y++;
 	}
