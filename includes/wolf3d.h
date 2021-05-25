@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 00:49:23 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 18:31:02 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:41:35 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,10 +117,10 @@ typedef struct s_ray
 
 typedef struct s_texture
 {
-	upng_t			*upngTexture;
 	int				width;
 	int				height;
 	uint32_t		*texture_buffer;
+	upng_t			*upng_texture;
 }					t_texture;
 
 typedef struct s_cntnr
@@ -143,10 +143,10 @@ typedef struct s_cntnr
 	int				wall_strip_height;
 	int				wall_top_pixel;
 	int				wall_bottom_pixel;
-	int				distanceFromTop;
-	int				textureOffsetY;
-	int				textureOffsetX;
-	uint32_t		texelColor;
+	int				distance_from_top;
+	int				txtre_offset_y;
+	int				txtre_offset_x;
+	uint32_t		texel_color;
 }					t_cntnr;
 
 void			validate_bites_before_reading(char *argv);

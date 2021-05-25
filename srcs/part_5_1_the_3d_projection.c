@@ -46,9 +46,9 @@ void	set_the_color_to_the_celing(int ray_nbr, t_cntnr *cntnr)
 void	calculate_texture_offset_x(int ray_nbr, t_cntnr *cntnr, t_ray *trays)
 {
 	if (trays[ray_nbr].was_hit_vrtcl)
-		cntnr->textureOffsetX = (int)trays[ray_nbr].wall_hit_y % TEXTURE_HEIGHT;
+		cntnr->txtre_offset_x = (int)trays[ray_nbr].wall_hit_y % TEXTURE_HEIGHT;
 	else
-		cntnr->textureOffsetX = (int)trays[ray_nbr].wall_hit_x % TEXTURE_WIDTH;
+		cntnr->txtre_offset_x = (int)trays[ray_nbr].wall_hit_x % TEXTURE_WIDTH;
 }
 
 void	set_the_color_to_the_bottom(int ray_nbr, t_cntnr *cntnr)
@@ -58,7 +58,7 @@ void	set_the_color_to_the_bottom(int ray_nbr, t_cntnr *cntnr)
 	y = cntnr->wall_bottom_pixel;
 	while (y < WINDOW_HEIGHT)
 	{
-		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF470e0e;
+		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xff040461;
 		y++;
 	}
 }

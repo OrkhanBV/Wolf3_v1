@@ -2,9 +2,9 @@
 
 void	set_texture_by_nbr(int y, int ray_nbr, t_cntnr *cntnr, int nbr_of_text)
 {
-	cntnr->texelColor = cntnr->wall_textures[nbr_of_text].texture_buffer[(
-			TEXTURE_WIDTH * cntnr->textureOffsetY) + cntnr->textureOffsetX];
-	cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = cntnr->texelColor;
+	cntnr->texel_color = cntnr->wall_textures[nbr_of_text].texture_buffer[(
+			TEXTURE_WIDTH * cntnr->txtre_offset_y) + cntnr->txtre_offset_x];
+	cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = cntnr->texel_color;
 }
 
 void	switch_case_for_get_correct_texture(int y, int ray_nbr,
@@ -32,9 +32,9 @@ void	get_correct_texture_id_depend_of_wall_dir(int ray_nbr,
 	y = cntnr->wall_top_pixel;
 	while (y < cntnr->wall_bottom_pixel)
 	{
-		cntnr->distanceFromTop = y + (
+		cntnr->distance_from_top = y + (
 				cntnr->wall_strip_height / 2) - (WINDOW_HEIGHT / 2);
-		cntnr->textureOffsetY = cntnr->distanceFromTop * (
+		cntnr->txtre_offset_y = cntnr->distance_from_top * (
 				(float)TEXTURE_HEIGHT / cntnr->wall_strip_height);
 		switch_case_for_get_correct_texture(y, ray_nbr, cntnr, trays);
 		y++;

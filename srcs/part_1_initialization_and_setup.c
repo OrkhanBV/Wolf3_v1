@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 02:08:13 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 18:23:37 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 19:08:03 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	setup(t_cntnr *cntnr, t_player *plr)
 			sizeof(uint32_t) * WINDOW_WIDTH * WINDOW_HEIGHT);
 	cntnr->color_bffr_txtre = SDL_CreateTexture(
 			cntnr->renderer,
-			SDL_PIXELFORMAT_ARGB8888,
+			SDL_PIXELFORMAT_ABGR8888,
 			SDL_TEXTUREACCESS_STREAMING,
 			WINDOW_WIDTH,
 			WINDOW_HEIGHT);
