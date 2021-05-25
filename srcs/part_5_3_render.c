@@ -38,10 +38,10 @@
 
 void	setup_the_map_parameters(t_cntnr *cntnr)
 {
-	cntnr->mapTileRect.x = cntnr->tileX * MINIMAP_SCALE_FACTOR;
-	cntnr->mapTileRect.y = cntnr->tileY * MINIMAP_SCALE_FACTOR;
-	cntnr->mapTileRect.w = TILE_SIZE * MINIMAP_SCALE_FACTOR;
-	cntnr->mapTileRect.h = TILE_SIZE * MINIMAP_SCALE_FACTOR;
+	cntnr->map_tile_rect.x = cntnr->tile_x * MINIMAP_SCALE_FACTOR;
+	cntnr->map_tile_rect.y = cntnr->tile_y * MINIMAP_SCALE_FACTOR;
+	cntnr->map_tile_rect.w = TILE_SIZE * MINIMAP_SCALE_FACTOR;
+	cntnr->map_tile_rect.h = TILE_SIZE * MINIMAP_SCALE_FACTOR;
 }
 
 void	render_map(t_cntnr *cntnr, t_player *plr)
@@ -55,16 +55,16 @@ void	render_map(t_cntnr *cntnr, t_player *plr)
 		j = 0;
 		while (j < MAP_NUM_COLS)
 		{
-			cntnr->tileX = j * TILE_SIZE;
-			cntnr->tileY = i * TILE_SIZE;
+			cntnr->tile_x = j * TILE_SIZE;
+			cntnr->tile_y = i * TILE_SIZE;
 			if (plr->map[i][j] != 0)
-				cntnr->tileColor = 255;
+				cntnr->tile_color = 255;
 			else
-				cntnr->tileColor = 0;
-			SDL_SetRenderDrawColor(cntnr->renderer, cntnr->tileColor,
-				cntnr->tileColor, cntnr->tileColor, 80);
+				cntnr->tile_color = 0;
+			SDL_SetRenderDrawColor(cntnr->renderer, cntnr->tile_color,
+				cntnr->tile_color, cntnr->tile_color, 80);
 			setup_the_map_parameters(cntnr);
-			SDL_RenderFillRect(cntnr->renderer, &(cntnr->mapTileRect));
+			SDL_RenderFillRect(cntnr->renderer, &(cntnr->map_tile_rect));
 			j++;
 		}
 		i++;

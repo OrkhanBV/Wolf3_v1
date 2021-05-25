@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 19:40:08 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 00:53:16 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:21:26 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	destroy_window(t_cntnr *cntnr)
 {
 	free_wall_textures(cntnr);
-	free(cntnr->colorBuffer);
-	SDL_DestroyTexture(cntnr->colorBufferTexture);
+	free(cntnr->color_buffer);
+	SDL_DestroyTexture(cntnr->color_bffr_txtre);
 	SDL_DestroyRenderer(cntnr->renderer);
 	SDL_DestroyWindow(cntnr->window);
 	SDL_Quit();
@@ -44,9 +44,9 @@ int	main(int argc, char **argv)
 	check_contain_of_map(&plr);
 	translate_map_from_char_to_int(&plr);
 	initializing_of_ctnr(&cntnr);
-	cntnr.isGameRunning = initializing_of_window(&cntnr);
+	cntnr.is_game_running = initializing_of_window(&cntnr);
 	setup(&cntnr, &plr);
-	while (cntnr.isGameRunning)
+	while (cntnr.is_game_running)
 	{
 		process_input(&cntnr, &plr);
 		update(&cntnr, &plr, trays);

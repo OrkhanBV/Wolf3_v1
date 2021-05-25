@@ -11,7 +11,7 @@ void	clear_color_buffer(uint32_t color, t_cntnr *cntnr)
 		y = 0;
 		while (y < WINDOW_HEIGHT)
 		{
-			cntnr->colorBuffer[(WINDOW_WIDTH * y) + x] = color;
+			cntnr->color_buffer[(WINDOW_WIDTH * y) + x] = color;
 			y++;
 		}
 		x++;
@@ -21,9 +21,9 @@ void	clear_color_buffer(uint32_t color, t_cntnr *cntnr)
 void	render_color_buffer(t_cntnr *cntnr)
 {
 	SDL_UpdateTexture(
-		cntnr->colorBufferTexture,
+		cntnr->color_bffr_txtre,
 		NULL,
-		cntnr->colorBuffer,
+		cntnr->color_buffer,
 		(int)(WINDOW_WIDTH * sizeof(uint32_t)));
-	SDL_RenderCopy(cntnr->renderer, cntnr->colorBufferTexture, NULL, NULL);
+	SDL_RenderCopy(cntnr->renderer, cntnr->color_bffr_txtre, NULL, NULL);
 }

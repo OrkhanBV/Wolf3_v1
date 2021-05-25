@@ -38,7 +38,7 @@ void	set_the_color_to_the_celing(int ray_nbr, t_cntnr *cntnr)
 	y = 0;
 	while (y < cntnr->wallTopPixel)
 	{
-		cntnr->colorBuffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF333333;
+		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF333333;
 		y++;
 	}
 }
@@ -58,7 +58,7 @@ void	set_the_color_to_the_bottom(int ray_nbr, t_cntnr *cntnr)
 	y = cntnr->wallBottomPixel;
 	while (y < WINDOW_HEIGHT)
 	{
-		cntnr->colorBuffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF470e0e;
+		cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = 0xFF470e0e;
 		y++;
 	}
 }

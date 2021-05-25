@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 00:49:23 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 01:08:12 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:25:53 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,17 +127,17 @@ typedef struct s_cntnr
 {
 	SDL_Renderer	*renderer;
 	SDL_Window		*window;
-	SDL_Texture		*colorBufferTexture;
-	t_texture		wallTextures[3];
-	char			*textureFileNames[TEXTURE_NBR];
-	SDL_Rect		mapTileRect;
-	uint32_t		*colorBuffer;
+	SDL_Texture		*color_bffr_txtre;
+	t_texture		wall_textures[3];
+	char			*texture_fl_names[TEXTURE_NBR];
+	SDL_Rect		map_tile_rect;
+	uint32_t		*color_buffer;
 	uint32_t		*textures[NUM_TEXTURES];
-	int				isGameRunning;
-	int				ticksLastFrame;
-	int				tileX;
-	int				tileY;
-	int				tileColor;
+	int				is_game_running;
+	int				ticks_last_frame;
+	int				tile_x;
+	int				tile_y;
+	int				tile_color;
 	float			perpDistance;
 	float			projectedWallHeight;
 	int				wallStripHeight;

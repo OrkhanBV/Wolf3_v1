@@ -26,10 +26,10 @@ void	update(t_cntnr *cntnr, t_player *plr, t_ray *tray)
 	float	deltaTime;
 
 	if (!SDL_TICKS_PASSED(SDL_GetTicks(),
-			cntnr->ticksLastFrame + FRAME_TIME_LENGTH))
+			cntnr->ticks_last_frame + FRAME_TIME_LENGTH))
 		return ;
-	deltaTime = (SDL_GetTicks() - cntnr->ticksLastFrame) / 1000.0f;
-	cntnr->ticksLastFrame = SDL_GetTicks();
+	deltaTime = (SDL_GetTicks() - cntnr->ticks_last_frame) / 1000.0f;
+	cntnr->ticks_last_frame = SDL_GetTicks();
 	move_player(deltaTime, plr);
 	cast_all_rays(plr, tray);
 }

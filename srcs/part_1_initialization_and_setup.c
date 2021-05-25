@@ -6,7 +6,7 @@
 /*   By: jremarqu <jremarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 02:08:13 by jremarqu          #+#    #+#             */
-/*   Updated: 2021/05/25 00:54:37 by jremarqu         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:23:37 by jremarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	initializing_of_ctnr(t_cntnr *cntnr)
 {
-	cntnr->isGameRunning = FALSE;
+	cntnr->is_game_running = FALSE;
 	cntnr->window = NULL;
 	cntnr->renderer = NULL;
-	cntnr->isGameRunning = FALSE;
-	cntnr->ticksLastFrame = 0;
-	cntnr->colorBuffer = NULL;
-	cntnr->colorBufferTexture = NULL;
+	cntnr->is_game_running = FALSE;
+	cntnr->ticks_last_frame = 0;
+	cntnr->color_buffer = NULL;
+	cntnr->color_bffr_txtre = NULL;
 }
 
 int	initializing_of_window(t_cntnr *cntnr)
@@ -77,10 +77,10 @@ int	initializing_of_window(t_cntnr *cntnr)
 
 void	init_way_to_png(t_cntnr *cntnr)
 {
-	cntnr->textureFileNames[0] = "includes/img/bluestone.png";
-	cntnr->textureFileNames[1] = "includes/img/graystone.png";
-	cntnr->textureFileNames[2] = "includes/img/colorstone.png";
-	cntnr->textureFileNames[3] = "includes/img/mossystone.png";
+	cntnr->texture_fl_names[0] = "includes/img/bluestone.png";
+	cntnr->texture_fl_names[1] = "includes/img/graystone.png";
+	cntnr->texture_fl_names[2] = "includes/img/colorstone.png";
+	cntnr->texture_fl_names[3] = "includes/img/mossystone.png";
 }
 
 void	setup(t_cntnr *cntnr, t_player *plr)
@@ -94,9 +94,9 @@ void	setup(t_cntnr *cntnr, t_player *plr)
 	plr->rotation_angle = PI;
 	plr->walk_speed = 200;
 	plr->turn_speed = 200 * (PI / 180);
-	cntnr->colorBuffer = (uint32_t *)malloc(
+	cntnr->color_buffer = (uint32_t *)malloc(
 			sizeof(uint32_t) * WINDOW_WIDTH * WINDOW_HEIGHT);
-	cntnr->colorBufferTexture = SDL_CreateTexture(
+	cntnr->color_bffr_txtre = SDL_CreateTexture(
 			cntnr->renderer,
 			SDL_PIXELFORMAT_ARGB8888,
 			SDL_TEXTUREACCESS_STREAMING,

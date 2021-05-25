@@ -2,9 +2,9 @@
 
 void	set_texture_by_nbr(int y, int ray_nbr, t_cntnr *cntnr, int nbr_of_text)
 {
-	cntnr->texelColor = cntnr->wallTextures[nbr_of_text].texture_buffer[(
+	cntnr->texelColor = cntnr->wall_textures[nbr_of_text].texture_buffer[(
 			TEXTURE_WIDTH * cntnr->textureOffsetY) + cntnr->textureOffsetX];
-	cntnr->colorBuffer[(WINDOW_WIDTH * y) + ray_nbr] = cntnr->texelColor;
+	cntnr->color_buffer[(WINDOW_WIDTH * y) + ray_nbr] = cntnr->texelColor;
 }
 
 void	switch_case_for_get_correct_texture(int y, int ray_nbr,
